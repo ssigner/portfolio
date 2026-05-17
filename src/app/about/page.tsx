@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+import CopyEmailButton from "@/components/CopyEmailButton";
 const strengths = [
   {
     title: "Game System Architecture",
@@ -310,21 +310,16 @@ export default function AboutPage() {
 
           <div className="mt-8 flex flex-wrap gap-3">
             <a
-              href="https://github.com/ssigner"
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-full bg-emerald-300 px-6 py-3 font-semibold text-zinc-950 transition hover:bg-emerald-200"
+                href="https://github.com/ssigner"
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-full bg-emerald-300 px-6 py-3 font-semibold text-zinc-950 transition hover:bg-emerald-200"
             >
-              GitHub
+                GitHub
             </a>
 
-            <a
-              href="mailto:your-email@example.com"
-              className="rounded-full border border-zinc-700 px-6 py-3 font-semibold text-zinc-100 transition hover:border-emerald-300 hover:text-emerald-300"
-            >
-              Email
-            </a>
-          </div>
+            <CopyEmailButton className="rounded-full border border-zinc-700 px-6 py-3 font-semibold text-zinc-100 transition hover:border-emerald-300 hover:text-emerald-300" />
+            </div>
         </section>
       </section>
     </main>

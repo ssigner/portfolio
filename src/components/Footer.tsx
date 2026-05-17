@@ -1,3 +1,5 @@
+import CopyEmailButton from "./CopyEmailButton";
+
 export default function Footer() {
   return (
     <footer className="border-t border-zinc-800 bg-[#0B0F14]">
@@ -13,12 +15,8 @@ export default function Footer() {
           >
             GitHub
           </a>
-          <a
-            href="mailto:huni00807@pusan.ac.kr"
-            className="transition hover:text-emerald-300"
-          >
-            Email
-          </a>
+
+          <CopyEmailButton className="transition hover:text-emerald-300" />
         </div>
       </div>
     </footer>
