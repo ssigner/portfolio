@@ -17,6 +17,10 @@ const strengths = [
     title: "AI / Computer Vision",
     body: "YOLO 기반 객체 검출, 이미지 분석, 보행자 특징 추출, 유사도 검색, 카메라 기하 기반 치수 계산 프로젝트를 경험했습니다.",
   },
+  {
+    title: "Technical Writing & Review",
+    body: "Unity, C#, 알고리즘, 프로젝트 회고를 개인 기록장에 정리하며, 구현한 기능의 구조와 장단점을 되돌아보는 습관을 유지하고 있습니다.",
+  },
 ];
 
 const experiences = [
@@ -102,6 +106,24 @@ const workStyle = [
   "팀 프로젝트에서는 내가 구현한 기능이 다른 파트와 충돌하지 않도록 데이터 구조와 초기화 순서를 중요하게 봅니다.",
 ];
 
+const earlyProjects = [
+  {
+    title: "Black Jack",
+    type: "First Personal Project",
+    body: "학교 텀프로젝트 겸 처음으로 진행한 개인 프로젝트입니다. 초기 개인 개발 경험을 통해 게임 로직 구현과 프로젝트 완성 과정을 경험했습니다.",
+  },
+  {
+    title: "Random Roadview Game",
+    type: "Open API Personal Project",
+    body: "학교 텀프로젝트의 Open API 활용 요구사항에 맞춰 새로 제작한 개인 프로젝트입니다. 외부 API를 활용해 게임 아이디어를 구현한 경험입니다.",
+  },
+  {
+    title: "Pixel Defense Code Review",
+    type: "Released Game Review",
+    body: "Pixel Defense 개발 이후 GameData, Installer, ObjectPool, GameSystem, Graphics, Tower, Mob, Audio 등 파트별 코드 구조와 장단점을 되돌아보는 리뷰를 작성했습니다.",
+  },
+];
+
 function StrengthCard({ title, body }: { title: string; body: string }) {
   return (
     <article className="rounded-2xl border border-zinc-800 bg-zinc-900/60 p-6">
@@ -152,6 +174,28 @@ function SkillGroup({ title, items }: { title: string; items: string[] }) {
           </span>
         ))}
       </div>
+    </article>
+  );
+}
+
+function EarlyProjectCard({
+  title,
+  type,
+  body,
+}: {
+  title: string;
+  type: string;
+  body: string;
+}) {
+  return (
+    <article className="rounded-2xl border border-zinc-800 bg-zinc-900/60 p-6">
+      <p className="text-sm font-semibold tracking-[0.2em] text-emerald-300">
+        {type}
+      </p>
+
+      <h3 className="mt-3 text-2xl font-bold text-zinc-100">{title}</h3>
+
+      <p className="mt-4 leading-7 text-zinc-300">{body}</p>
     </article>
   );
 }
@@ -278,6 +322,40 @@ export default function AboutPage() {
               </li>
             ))}
           </ul>
+        </section>
+
+        <section className="mt-20">
+          <p className="text-sm font-semibold tracking-[0.3em] text-emerald-300">
+            TECHNICAL ARCHIVE
+          </p>
+
+          <h2 className="mt-3 text-4xl font-bold">
+            Early Projects & Technical Notes
+          </h2>
+
+          <p className="mt-4 max-w-4xl leading-8 text-zinc-300">
+            초기 개인 프로젝트와 학습 기록은 Notion 기반 개인 기록장에 정리했습니다.
+            Black Jack, Open API 기반 랜덤 로드뷰 게임, Pixel Defense 코드 리뷰 등을
+            통해 기능 구현뿐 아니라 코드 구조, 설계 의도, 장단점을 되돌아보는 습관을
+            만들었습니다.
+          </p>
+
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
+            {earlyProjects.map((project) => (
+              <EarlyProjectCard key={project.title} {...project} />
+            ))}
+          </div>
+
+          <div className="mt-8">
+            <a
+              href="https://ssigner.notion.site/be135b64b6e14a1dab3df0da39ad0d33"
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full border border-zinc-700 px-6 py-3 font-semibold text-zinc-100 transition hover:border-emerald-300 hover:text-emerald-300"
+            >
+              Notion 기록장 보기
+            </a>
+          </div>
         </section>
 
         <section className="mt-20 rounded-2xl border border-zinc-800 bg-zinc-900/60 p-8">
