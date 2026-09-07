@@ -25,9 +25,9 @@ const strengths = [
 
 const experiences = [
   {
-    title: "REVIVE",
+    title: "RE∀IVE",
     role: "Main Client Programmer / Development Lead",
-    body: "Unity 2D 메트로배니아 프로젝트에서 데이터 파이프라인, DI 초기화 구조, 씬 전환, 플레이어 시스템, 세이브/진행도, 컷씬/Naninovel 연동, 보스 기믹을 구현했습니다.",
+    body: "Steam과 STOVE에 데모를 출시한 Unity 2D 메트로배니아 프로젝트에서 데이터 파이프라인, 씬 전환, 캐릭터 전환, 세이브/진행도, 컷씬/Naninovel과 멀티 스토어 SDK 연동을 구현했습니다.",
     href: "/projects/revive",
   },
   {
@@ -260,7 +260,7 @@ export default function AboutPage() {
             </p>
 
             <p className="mt-5 max-w-4xl leading-8 text-zinc-300">
-              REVIVE에서는 메인 클라이언트 프로그래머로서 복잡한 런타임 구조를
+              RE∀IVE에서는 메인 클라이언트 프로그래머로서 복잡한 런타임 구조를
               설계했고, Pixel Defense에서는 실제 출시와 업데이트를 경험했습니다.
               FindSuspect와 Box.size Algorithm에서는 AI 모델과 이미지 분석
               결과를 실제 문제 해결 알고리즘으로 연결하는 경험을 했습니다.

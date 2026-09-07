@@ -1,4 +1,61 @@
+import Link from "next/link";
+
+const storeLinks = [
+  {
+    name: "Steam",
+    href: "https://store.steampowered.com/app/4629440/REIVE_REVIVE_Demo/",
+    detail: "Windows / macOS",
+  },
+  {
+    name: "STOVE",
+    href: "https://store.onstove.com/ko/games/105465",
+    detail: "Windows",
+  },
+];
+
+const contributionStats = [
+  { value: "100+", label: "Merged PRs" },
+  { value: "2", label: "Demo Storefronts" },
+  { value: "2024.11", label: "Contribution Start" },
+  { value: "2026.08", label: "Latest Work" },
+];
+
+const recentWork = [
+  {
+    period: "2026.08",
+    reference: "PR #273",
+    title: "Steam / STOVE 데모 대응",
+    body: "스토어별 SDK 구현을 DI 흐름에 연결하고 도전과제, Steam Input, macOS 세이브 경로 마이그레이션과 빌드 파이프라인 분리를 마무리했습니다.",
+  },
+  {
+    period: "2026.06 — 07",
+    reference: "PR #253 · #255 · #266 · #267",
+    title: "릴리 전환과 신규 능력 완성",
+    body: "주인공과 릴리의 전환·강제 전환을 구축하고 릴리 근접 공격, 드릴, 빅점프, 사망 모션과 엔딩 스크립트를 완성했습니다.",
+  },
+  {
+    period: "2026.04 — 05",
+    reference: "PR #216 · #232 · #234 · #246",
+    title: "데모 플레이 루프와 연출 보강",
+    body: "회복약, 보물상자, 진행 목표, 엔지니어 시나리오를 추가하고 AudioManager 캐시 구조와 Naninovel 대화를 개선했습니다.",
+  },
+  {
+    period: "2025.12 — 2026.04",
+    reference: "PR #108 · #149 · #202",
+    title: "씬 전환·풀링·보스 흐름 안정화",
+    body: "포털 프리로드와 스폰 복원을 다듬고 몹 스폰을 Stage 단위 풀링으로 전환했으며 보스 진행을 명시적인 상태 구조로 리팩토링했습니다.",
+  },
+];
+
 const contributions = [
+  {
+    title: "Steam / STOVE Platform Integration",
+    body: "Steamworks.NET과 STOVE PC SDK를 스토어별 구현으로 분리하고 DI 초기화 흐름에 연결했습니다. 도전과제, Steam Input, 플랫폼 생명주기와 macOS 세이브 경로 마이그레이션을 구현해 두 스토어의 데모 빌드를 지원했습니다.",
+  },
+  {
+    title: "Character Switch & Abilities",
+    body: "주인공과 릴리의 전환 흐름, 강제 전환, 릴리 근접 공격과 드릴·빅점프를 구현하고 카메라 보간, 착지 판정, 스턴 및 애니메이션 전환을 반복 개선했습니다.",
+  },
   {
     title: "Data-Driven Architecture",
     body: "Excel 기반 게임 데이터를 ScriptableObject로 변환하고, Addressables와 DI Container를 통해 런타임에서 사용할 수 있는 구조를 구축했습니다.",
@@ -52,6 +109,15 @@ const caseStudies = [
       "Naninovel 커스텀 커맨드를 만들어 시나리오 스크립트에서 Unity 오브젝트와 게임 상태를 제어할 수 있도록 구성했습니다.",
     result:
       "컷씬 작성과 게임플레이 이벤트 연결을 스크립트 중심으로 처리할 수 있게 되어, 연출 수정과 테스트가 쉬워졌습니다.",
+  },
+  {
+    title: "Steam / STOVE를 하나의 게임 흐름에 연결",
+    problem:
+      "Steam과 STOVE는 초기화, 도전과제, 입력, 저장 경로가 서로 달라 스토어 SDK 의존성이 게임플레이 코드로 퍼질 수 있었습니다.",
+    solution:
+      "플랫폼 계약과 스토어별 구현을 분리하고 PlatformCompositionRoot에서 실행 환경에 맞는 서비스를 DI로 등록했습니다. 기존 입력 구조를 감싸는 Steam Input 어댑터와 macOS 기존 세이브 경로 마이그레이션도 함께 구현했습니다.",
+    result:
+      "게임 시스템의 호출 흐름을 유지하면서 Steam과 STOVE 데모 빌드가 각 플랫폼의 도전과제와 입력, 저장 정책을 사용하도록 구성했습니다.",
   },
 ];
 
@@ -161,6 +227,13 @@ const timelineVideos = [
     description:
       "Naninovel과 Unity 런타임 오브젝트를 연결해 연출을 구성한 단계입니다.",
     src: "/projects/revive/videos/timeline-cutscene-integration.mp4",
+  },
+  {
+    period: "August 2026",
+    title: "Steam / STOVE 데모 출시",
+    description:
+      "스토어별 SDK, 도전과제, Steam Input과 저장 경로 대응을 마치고 두 플랫폼에 데모를 출시한 단계입니다.",
+    src: "/projects/revive/videos/current-build-pv.mp4",
   },
 ];
 
@@ -295,25 +368,96 @@ export default function RevivePage() {
   return (
     <main className="min-h-screen bg-[#0B0F14] text-zinc-100">
       <section className="mx-auto max-w-6xl px-6 py-20">
-        <a href="/" className="text-sm text-emerald-300 hover:underline">
+        <Link href="/" className="text-sm text-emerald-300 hover:underline">
           ← Home
-        </a>
+        </Link>
 
-        <section className="mt-12">
-          <p className="text-sm font-semibold tracking-[0.3em] text-emerald-300">
-            UNITY / 2D PIXEL-ART METROIDVANIA
-          </p>
+        <section className="relative mt-12 overflow-hidden rounded-[2rem] border border-emerald-300/20 bg-zinc-900/60 p-7 shadow-[0_30px_100px_rgba(16,185,129,0.08)] md:p-12">
+          <div className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full bg-emerald-300/10 blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-40 left-1/3 h-72 w-72 rounded-full bg-cyan-400/5 blur-3xl" />
 
-          <h1 className="mt-4 text-6xl font-bold">REVIVE</h1>
+          <div className="relative grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
+            <div>
+              <div className="flex flex-wrap items-center gap-3">
+                <p className="text-sm font-semibold tracking-[0.3em] text-emerald-300">
+                  UNITY / 2D PIXEL-ART METROIDVANIA
+                </p>
+                <span className="rounded-full border border-emerald-300/40 bg-emerald-300/10 px-3 py-1 text-xs font-bold tracking-[0.14em] text-emerald-200">
+                  DEMO RELEASED
+                </span>
+              </div>
 
-          <p className="mt-6 max-w-3xl text-lg leading-8 text-zinc-300">
-            Unity 기반 2D 픽셀아트 메트로배니아 프로젝트입니다. 메인
-            클라이언트 프로그래머로 참여하여 데이터 파이프라인, DI 초기화
-            구조, 씬 전환, 플레이어 시스템, 세이브/진행도, 컷씬 연동, 보스
-            기믹을 구현했습니다.
-          </p>
+              <h1
+                className="mt-5 text-7xl font-black tracking-[-0.06em] md:text-8xl"
+                aria-label="REVIVE"
+              >
+                RE∀IVE
+              </h1>
 
-          <div className="mt-10 overflow-hidden rounded-2xl border border-zinc-800 bg-black">
+              <p className="mt-7 max-w-3xl text-lg leading-8 text-zinc-300">
+                Steam과 STOVE에 데모를 출시한 Unity 기반 2D 픽셀아트 액션
+                메트로배니아입니다. 메인 클라이언트 프로그래머로 참여하여 데이터
+                파이프라인, 런타임 초기화, 씬 전환, 플레이어와 캐릭터 전환,
+                세이브/진행도, 컷씬, 멀티 스토어 연동을 구현했습니다.
+              </p>
+
+              <div className="mt-8 flex flex-wrap gap-3">
+                {storeLinks.map((store, index) => (
+                  <a
+                    key={store.name}
+                    href={store.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={[
+                      "group rounded-full px-5 py-3 text-sm font-bold transition",
+                      index === 0
+                        ? "bg-emerald-300 text-zinc-950 hover:bg-emerald-200"
+                        : "border border-zinc-600 bg-zinc-950/50 text-zinc-100 hover:border-emerald-300 hover:text-emerald-200",
+                    ].join(" ")}
+                  >
+                    {store.name} 데모 플레이
+                    <span aria-hidden="true" className="ml-2">
+                      ↗
+                    </span>
+                    <span className="sr-only"> ({store.detail})</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            <aside className="rounded-2xl border border-zinc-700/80 bg-zinc-950/70 p-6 backdrop-blur">
+              <p className="text-xs font-bold tracking-[0.24em] text-emerald-300">
+                MY CONTRIBUTION / VERIFIED
+              </p>
+              <h2 className="mt-3 text-2xl font-bold">GitHub 기여 스냅샷</h2>
+              <p className="mt-3 text-sm leading-6 text-zinc-400">
+                2026.08.27 main 기준, ssigner의 개인 커밋과 병합 PR만 집계했습니다.
+              </p>
+
+              <dl className="mt-6 grid grid-cols-2 gap-3">
+                {contributionStats.map((stat) => (
+                  <div
+                    key={stat.label}
+                    className="rounded-xl border border-zinc-800 bg-zinc-900/80 p-4"
+                  >
+                    <dt className="text-xs leading-5 text-zinc-500">
+                      {stat.label}
+                    </dt>
+                    <dd className="mt-1 text-xl font-black text-emerald-300">
+                      {stat.value}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+
+              <div className="mt-5 border-t border-zinc-800 pt-5 text-sm leading-6 text-zinc-300">
+                Platform SDK · Character Switch · Save / Scene Flow · Data
+                Pipeline · Cutscene · Pooling
+              </div>
+            </aside>
+          </div>
+
+          <div className="relative mt-10 overflow-hidden rounded-2xl border border-zinc-800 bg-black">
             <video
               className="aspect-video w-full object-cover"
               src="/projects/revive/videos/current-build-pv.mp4"
@@ -323,6 +467,42 @@ export default function RevivePage() {
               playsInline
               controls
             />
+          </div>
+        </section>
+
+        <section className="mt-20">
+          <div className="flex flex-wrap items-end justify-between gap-5">
+            <div>
+              <p className="text-sm font-semibold tracking-[0.3em] text-emerald-300">
+                LATEST CONTRIBUTIONS
+              </p>
+              <h2 className="mt-3 text-4xl font-bold">최근에 직접 만든 것들</h2>
+            </div>
+            <p className="max-w-xl text-sm leading-6 text-zinc-400">
+              팀 전체 기능을 섞지 않고, GitHub에서 작성자가 ssigner로 확인되는
+              작업만 시기와 PR 단위로 묶었습니다.
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-5 md:grid-cols-2">
+            {recentWork.map((work) => (
+              <article
+                key={work.title}
+                className="relative overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/60 p-6 transition hover:-translate-y-1 hover:border-emerald-300/60"
+              >
+                <div className="absolute inset-y-0 left-0 w-1 bg-emerald-300" />
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <p className="text-sm font-bold text-emerald-300">
+                    {work.period}
+                  </p>
+                  <p className="font-mono text-xs text-zinc-500">
+                    {work.reference}
+                  </p>
+                </div>
+                <h3 className="mt-4 text-2xl font-bold">{work.title}</h3>
+                <p className="mt-4 leading-7 text-zinc-300">{work.body}</p>
+              </article>
+            ))}
           </div>
         </section>
 
@@ -343,6 +523,10 @@ export default function RevivePage() {
             <li>Easy Save 3 기반 Save / Load 구조 구현</li>
             <li>Naninovel 커스텀 커맨드 및 컷씬 연출 구현</li>
             <li>Mob / Bullet / SFX Object Pooling 최적화</li>
+            <li>주인공 / 릴리 전환 및 드릴·빅점프 구현</li>
+            <li>Steamworks.NET / STOVE PC SDK 연동</li>
+            <li>스토어 도전과제 / Steam Input 대응</li>
+            <li>macOS 세이브 경로 마이그레이션</li>
           </ul>
         </section>
 

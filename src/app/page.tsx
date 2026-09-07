@@ -2,14 +2,14 @@ import Link from "next/link";
 
 const featuredProjects = [
   {
-    title: "REVIVE",
-    category: "Unity / 2D Metroidvania",
+    title: "RE∀IVE",
+    category: "Demo Released / 2D Metroidvania",
     role: "Main Client Programmer / Development Lead",
     description:
-      "Unity 기반 2D 메트로배니아 프로젝트입니다. 데이터 파이프라인, DI 초기화 구조, 씬 전환, 플레이어 시스템, 세이브/진행도, 컷씬 연동, 보스 기믹을 구현했습니다.",
-    tags: ["Unity", "C#", "DI", "Addressables", "Naninovel", "Save", "Scene Flow"],
+      "Steam과 STOVE에 데모를 출시한 Unity 2D 메트로배니아입니다. 데이터 파이프라인, 씬 전환, 캐릭터 전환, 세이브, 컷씬과 멀티 스토어 SDK 연동을 구현했습니다.",
+    tags: ["Unity", "C#", "Steam", "STOVE", "Naninovel", "Save", "Scene Flow"],
     href: "/projects/revive",
-    badge: "Main Project",
+    badge: "Demo Released",
   },
   {
     title: "Pixel Defense",
@@ -163,51 +163,97 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#0B0F14] text-zinc-100">
       <section className="mx-auto max-w-6xl px-6 py-20">
-        <section className="flex min-h-[calc(100vh-10rem)] flex-col justify-center">
-          <p className="text-sm font-semibold tracking-[0.3em] text-emerald-300">
-            UNITY CLIENT PROGRAMMER
-          </p>
+        <section className="flex min-h-[calc(100vh-10rem)] flex-col justify-center py-10">
+          <div className="grid items-center gap-12 lg:grid-cols-[1.2fr_0.8fr]">
+            <div>
+              <p className="text-sm font-semibold tracking-[0.3em] text-emerald-300">
+                UNITY CLIENT PROGRAMMER
+              </p>
 
-          <h1 className="mt-5 max-w-5xl text-5xl font-bold leading-tight md:text-7xl">
-            게임 시스템과 데이터 기반 구조를 설계하는 개발자
-          </h1>
+              <h1 className="mt-5 max-w-5xl break-keep text-5xl font-bold leading-tight md:text-6xl xl:text-7xl">
+                게임 시스템과 데이터 기반 구조를 설계하는 개발자
+              </h1>
 
-          <p className="mt-8 max-w-3xl text-lg leading-8 text-zinc-300">
-            Unity 기반 게임 프로젝트에서는 플레이어 시스템, 씬 전환, 세이브,
-            컷씬 연동, 데이터 파이프라인을 구현했습니다. 또한 이미지 분석과
-            AI 알고리즘 프로젝트를 통해 객체 검출, 유사도 검색, 카메라 기하
-            기반 문제 해결 경험도 쌓았습니다.
-          </p>
+              <p className="mt-8 max-w-3xl text-lg leading-8 text-zinc-300">
+                Unity 기반 게임의 플레이어·씬·세이브·컷씬 흐름을 설계하고,
+                RE∀IVE의 Steam·STOVE 데모 출시를 위한 플랫폼 SDK와 입력,
+                도전과제 연동까지 구현했습니다.
+              </p>
 
-          <div className="mt-10 flex flex-wrap gap-3">
-            <Link
-              href="/projects/revive"
-              className="rounded-full bg-emerald-300 px-6 py-3 font-semibold text-zinc-950 transition hover:bg-emerald-200"
-            >
-              REVIVE 보기
-            </Link>
+              <div className="mt-10 flex flex-wrap gap-3">
+                <Link
+                  href="/projects/revive"
+                  className="rounded-full bg-emerald-300 px-6 py-3 font-semibold text-zinc-950 transition hover:bg-emerald-200"
+                >
+                  개인 기여 자세히 보기
+                </Link>
 
-            <Link
-              href="/projects"
-              className="rounded-full border border-zinc-700 px-6 py-3 font-semibold text-zinc-100 transition hover:border-emerald-300 hover:text-emerald-300"
-            >
-              전체 프로젝트 보기
-            </Link>
+                <Link
+                  href="/projects"
+                  className="rounded-full border border-zinc-700 px-6 py-3 font-semibold text-zinc-100 transition hover:border-emerald-300 hover:text-emerald-300"
+                >
+                  전체 프로젝트 보기
+                </Link>
 
-            <a
-              href="https://github.com/ssigner"
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-full border border-zinc-700 px-6 py-3 font-semibold text-zinc-100 transition hover:border-emerald-300 hover:text-emerald-300"
-            >
-              GitHub
-            </a>
+                <a
+                  href="https://github.com/ssigner"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-full border border-zinc-700 px-6 py-3 font-semibold text-zinc-100 transition hover:border-emerald-300 hover:text-emerald-300"
+                >
+                  GitHub
+                </a>
+              </div>
+            </div>
+
+            <aside className="relative overflow-hidden rounded-[2rem] border border-emerald-300/30 bg-zinc-900/80 p-8 shadow-[0_30px_100px_rgba(16,185,129,0.12)]">
+              <div className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-emerald-300/15 blur-3xl" />
+              <div className="relative">
+                <div className="flex items-center gap-2 text-xs font-bold tracking-[0.22em] text-emerald-300">
+                  <span className="h-2 w-2 rounded-full bg-emerald-300 shadow-[0_0_14px_rgba(110,231,183,0.9)]" />
+                  NOW PLAYABLE
+                </div>
+
+                <p
+                  className="mt-7 text-6xl font-black tracking-[-0.07em] text-white"
+                  aria-label="REVIVE"
+                >
+                  RE∀IVE
+                </p>
+                <p className="mt-3 text-xl font-bold text-zinc-200">
+                  Steam · STOVE Demo
+                </p>
+                <p className="mt-5 leading-7 text-zinc-400">
+                  멀티 스토어 SDK, 도전과제, Steam Input과 저장 경로 대응까지
+                  직접 구현한 팀 프로젝트입니다.
+                </p>
+
+                <div className="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+                  <a
+                    href="https://store.steampowered.com/app/4629440/REIVE_REVIVE_Demo/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="rounded-xl bg-emerald-300 px-4 py-3 text-center text-sm font-bold text-zinc-950 transition hover:bg-emerald-200"
+                  >
+                    Steam 플레이 ↗
+                  </a>
+                  <a
+                    href="https://store.onstove.com/ko/games/105465"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="rounded-xl border border-zinc-700 bg-zinc-950/50 px-4 py-3 text-center text-sm font-bold text-zinc-100 transition hover:border-emerald-300 hover:text-emerald-200"
+                  >
+                    STOVE 플레이 ↗
+                  </a>
+                </div>
+              </div>
+            </aside>
           </div>
 
           <div className="mt-16 grid gap-4 sm:grid-cols-3">
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900/60 p-5">
-              <p className="text-3xl font-bold text-emerald-300">01</p>
-              <p className="mt-2 text-sm text-zinc-400">Released Game</p>
+              <p className="text-3xl font-bold text-emerald-300">02</p>
+              <p className="mt-2 text-sm text-zinc-400">Store Release Experiences</p>
             </div>
 
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900/60 p-5">
@@ -280,7 +326,7 @@ export default function Home() {
             게임 개발에서는 단순히 기능을 하나씩 붙이는 것보다, 데이터가
             어디서 시작해 런타임에서 어떻게 쓰이고, 플레이어 입력과 씬 전환,
             저장 데이터, 컷씬 연출이 어떤 순서로 연결되는지가 중요하다고
-            생각합니다. REVIVE에서는 이러한 흐름을 직접 설계하고 구현했으며,
+            생각합니다. RE∀IVE에서는 이러한 흐름을 직접 설계하고 구현했으며,
             Pixel Defense에서는 실제 출시와 업데이트를 경험했습니다. 또한
             FindSuspect와 Box.size Algorithm을 통해 이미지 분석과 AI 기반
             알고리즘 문제 해결 경험도 쌓았습니다.

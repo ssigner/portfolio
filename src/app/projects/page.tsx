@@ -2,11 +2,11 @@ import Link from "next/link";
 
 const gameProjects = [
   {
-    title: "REVIVE",
-    subtitle: "2D Pixel-Art Metroidvania",
+    title: "RE∀IVE",
+    subtitle: "Released Demo / 2D Pixel-Art Metroidvania",
     role: "Main Client Programmer / Development Lead",
     description:
-      "Unity 기반 2D 메트로배니아 프로젝트입니다. 데이터 파이프라인, DI 초기화 구조, 씬 전환, 플레이어 시스템, 세이브/진행도, 컷씬 연동, 보스 기믹을 구현했습니다.",
+      "Steam과 STOVE에 데모를 출시한 Unity 2D 메트로배니아입니다. 데이터 파이프라인, 씬 전환, 캐릭터 전환, 세이브/진행도, 컷씬과 멀티 스토어 SDK 연동을 구현했습니다.",
     tags: [
       "Unity",
       "C#",
@@ -15,9 +15,10 @@ const gameProjects = [
       "DI Container",
       "Naninovel",
       "Addressables",
+      "Steam / STOVE",
     ],
     href: "/projects/revive",
-    status: "Team Project",
+    status: "Demo Released",
     highlight: true,
   },
   {
@@ -250,7 +251,7 @@ export default function ProjectsPage() {
 
           <p className="mt-5 max-w-4xl leading-8 text-zinc-300">
             저는 Unity 클라이언트 개발을 중심으로 게임 시스템과 데이터 기반
-            구조를 설계해왔습니다. REVIVE에서는 메인 프로그래머로서 게임의
+            구조를 설계해왔습니다. RE∀IVE에서는 메인 프로그래머로서 게임의
             핵심 런타임 구조와 기능을 담당했고, Pixel Defense에서는 실제
             스토어 출시와 운영 업데이트 경험을 쌓았습니다. 또한 FindSuspect와
             Box.size Algorithm을 통해 이미지 분석과 AI 기반 알고리즘 개발
